@@ -1,0 +1,22 @@
+<div class="main-header">
+
+  <div class="main-header__wrapper flex align-center justify-center flex-column">
+
+    <h1 class="main-header__title">
+      Create your Mother Faker API
+    </h1>
+
+    <div class="main-header__actions flex align-center">
+      <button type="button" class="btn btn-success btn-lg main-header__login-action" *showIfLoggedIn="false"
+              (click)="openLogin()">Sign
+        in
+      </button>
+      <button type="button" class="btn btn-primary btn-lg" *showIfLoggedIn="false" (click)="openSignup()">Sign
+        up
+      </button>
+    </div>
+
+  </div>
+
+
+</div>

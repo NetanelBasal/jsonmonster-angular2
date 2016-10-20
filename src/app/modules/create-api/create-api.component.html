@@ -1,0 +1,66 @@
+<section class="container">
+
+  <form novalidate [formGroup]="apiForm" class="col-sm-12" (submit)="submit(apiForm)">
+
+    <div class="form-group">
+      <input type="text" placeholder="Project name" formControlName="projectName" class="form-control input-lg">
+    </div>
+
+    <div class="form-group">
+      <input type="text" placeholder="Table name" formControlName="tableName" class="form-control input-lg">
+    </div>
+
+    <section formArrayName="columns">
+
+      <button class="btn btn-warning" (click)="addColumn()" type="button">Add column +</button>
+
+      <section class="flex columns-wrapper">
+
+        <div class="panel panel-default add-column"
+             *ngFor="let column of columns.controls; let i=index; let first=first;" [formGroupName]="i">
+          <div class="panel-heading flex align-center justify-space-between">
+            <b>Column settings</b>
+            <button *ngIf="!first" type="button" class="close" (click)="removeColumn(column)"><span>&times;</span>
+            </button>
+          </div>
+          <div class="col-str">
+            <p>
+              <input type="text" class="form-control input-lg" placeholder="Column name" formControlName="name">
+            </p>
+          </div>
+
+          <div class="columns__type-select">
+            <select choices
+                    formControlName="columnSchema"
+                    [choicesConfig]="columnsType"
+                    (onChange)="onChoiceChange($event)">
+            </select>
+          </div>
+
+          <p *ngIf="column.invalid && submitted" class="text-danger">All the fields are required</p>
+        </div>
+
+      </section>
+
+    </section>
+
+    <div class="num-rows">
+      <div class="form-group">
+        <label>Num rows (max: 99)</label>
+        <input type="number" class="form-control"
+               formControlName="numRows"
+               placeholder="Num rows"
+               maxValue="99"
+               validateMaxValue>
+      </div>
+    </div>
+
+    <spinner [showSpinner]="(showSpinner$ | async)"></spinner>
+
+    <div class="flex justify-end mt">
+      <button type="submit" class="btn btn-primary" [disabled]="apiForm.invalid">Create</button>
+    </div>
+
+  </form>
+
+</section>

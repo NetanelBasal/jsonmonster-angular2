@@ -1,0 +1,79 @@
+body, html {
+  background-image: url('assets/bg.png');
+}
+
+a:focus, button:focus {
+  outline: none !important;
+}
+
+a {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-one {
+  flex: 1;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.mt {
+  margin-top: 1em;
+}
+
+.modal-content {
+  animation: fade-scale 0.3s;
+  transform-origin: top;
+}
+
+@keyframes fade-scale {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.choices__group .choices__heading {
+  text-transform: capitalize;
+}
+
+.choices__inner {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  color: #555;
+  border: 1px solid #ccc;
+}
+
+.capitialize {
+  text-transform: capitalize;
+}

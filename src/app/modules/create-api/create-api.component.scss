@@ -1,0 +1,27 @@
+.col-str {
+  margin: 0.8em;
+}
+
+.columns__type-select {
+  padding: 0 0.8em 0.8em;
+}
+
+.add-column {
+  padding: 0;
+}
+
+.columns-wrapper {
+  margin-top:1rem;
+  flex-wrap: wrap;
+}
+
+.panel {
+  flex: 0 1 calc(33.3333% - 1rem);
+  margin-right: 1rem;
+}
+
+.num-rows {
+  input {
+    width: 70px;
+  }
+}

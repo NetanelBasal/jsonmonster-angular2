@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-sm-12">
+
+    <div *ngFor="let project of projects;" class="panel panel-success">
+
+      <div class="panel-heading capitialize">{{project.projectName}} Project</div>
+
+      <section *ngFor="let table of project.tables;">
+        <h5><span class="capitialize">{{table.name}}</span> table</h5>
+        <div class="projects-rest">
+          <p><code>GET</code> - <a href="{{baseUrl}}/{{table.path}}" target="_blank">{{baseUrl}}/{{table.path}}</a></p>
+          <p><code>GET </code>- {{baseUrl}}/{{table.path}}/[id]</p>
+          <p><code>PUT</code> - {{baseUrl}}/{{table.path}}/[id]</p>
+          <p><code>DELETE</code> - {{baseUrl}}/{{table.path}}/[id]</p>
+        </div>
+      </section>
+
+
+    </div>
+
+  </div>
+</div>
